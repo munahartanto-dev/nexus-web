@@ -32,7 +32,7 @@ export default function AboutPage() {
   return (
     <div className="w-full">
       {/* SECTION 1 - PAGE HERO */}
-      <section className="relative pt-6 pb-20 md:pt-12 md:pb-28 bg-[#FAF9F5] overflow-hidden">
+      <section className="relative min-h-[50vh] flex items-center justify-center pt-6 pb-20 md:pt-12 md:pb-28 bg-[#FAF9F5] overflow-hidden">
         {/* Background blob */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#611F69]/20 to-[#4A7CC7]/10 rounded blur-3xl -translate-y-1/2 translate-x-1/3"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#611F69]/10 to-[#F9EDFF]/30 rounded blur-3xl translate-y-1/3 -translate-x-1/3"></div>

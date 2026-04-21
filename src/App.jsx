@@ -1,6 +1,7 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import BottomNav from './components/BottomNav';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -14,22 +15,21 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       setCurrentPath(window.location.hash);
-      // scroll to top on page change
       if (['', '#about', '#layanan', '#portofolio', '#faq'].includes(window.location.hash)) {
         window.scrollTo(0, 0);
       }
     };
-    
     window.addEventListener('hashchange', handleHashChange);
-    handleHashChange(); // initial check
-    
+    handleHashChange();
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   return (
     <div className="flex min-h-screen flex-col font-sans">
       <Navbar />
-      <main className="flex-1">
+      {/* Spacer for mobile fixed top bar (h-14 = 56px) */}
+      <div className="md:hidden h-14 shrink-0" />
+      <main className="flex-1 pb-24 md:pb-0">
         <Suspense fallback={<div className="flex-1" />}>
           {currentPath === '#about' ? <About /> :
            currentPath === '#layanan' ? <Produk /> :
@@ -38,7 +38,7 @@ export default function App() {
         </Suspense>
       </main>
       <Footer />
+      <BottomNav currentPath={currentPath} />
     </div>
   );
 }
-

@@ -1,4 +1,4 @@
-import { LineChart, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 export default function Footer() {
   const navLinks = [
@@ -16,15 +16,12 @@ export default function Footer() {
           
           {/* Left Column: Logo & Tagline */}
           <div className="flex flex-col space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded border-2 border-[#1D1C1D] flex items-center justify-center">
-                <LineChart className="text-[#1D1C1D] w-5 h-5" />
-              </div>
-              <div className="text-2xl tracking-tight font-slack-head">
-                <span className="font-bold text-[#1D1C1D]">Nexus</span>
-                <span className="font-bold text-[#611F69]">Data</span>
-              </div>
-            </div>
+            <a href="#" className="flex items-center gap-2 shrink-0">
+              <img src="/images/logo.webp" alt="NexusData Logo" className="h-11 w-auto" />
+              <span className="font-heading font-extrabold text-[22px] leading-none tracking-tight text-[#1D1C1D]">
+                Nexus<span className="text-[#611F69]">Data</span>
+              </span>
+            </a>
             <p className="text-[#454245] font-medium max-w-xs leading-relaxed">
               Jembatan Digital untuk Bisnis Naik Kelas
             </p>

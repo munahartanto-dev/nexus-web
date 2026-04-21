@@ -118,7 +118,7 @@ export default function Home() {
           
           <div className="w-full relative mt-20 max-w-5xl mx-auto reveal" style={{ transitionDelay: '0.2s' }}>
             <div
-              className="relative w-full aspect-video md:aspect-[16/9] bg-white rounded-2xl shadow-2xl border border-[#F4F4F4] flex flex-col overflow-hidden z-10 transition-colors duration-500"
+              className="relative w-full min-h-[320px] md:aspect-[16/9] bg-white rounded-2xl shadow-2xl border border-[#F4F4F4] flex flex-col overflow-hidden z-10 transition-colors duration-500"
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >

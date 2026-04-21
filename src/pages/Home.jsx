@@ -284,15 +284,11 @@ export default function Home() {
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
             
-            {/* Left Image Placeholder */}
+            {/* Left Image */}
             <div className="w-full md:w-5/12 reveal">
-              <div className="w-full aspect-[4/5] bg-[#4A154B] rounded-3xl relative overflow-hidden flex items-center justify-center shadow-xl shadow-[#4A154B]/20">
+              <div className="w-full aspect-[4/5] rounded-3xl relative overflow-hidden shadow-xl shadow-[#4A154B]/20">
+                <img src="/images/foto-home.webp" alt="Muna Hartanto - Founder NexusData" className="w-full h-full object-cover" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                <span className="font-heading font-extrabold text-[#ffffff] opacity-10 text-[120px] absolute">ND</span>
-                {/* Silhouette vector mockup */}
-                <svg className="w-3/4 h-3/4 text-white/20 mt-16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                </svg>
                 <div className="absolute bottom-6 left-6 text-white text-left">
                   <p className="font-bold text-lg">Muna Hartanto</p>
                   <p className="text-sm text-gray-300">Founder & Lead Data Engineer</p>

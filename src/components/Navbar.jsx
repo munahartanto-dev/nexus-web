@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, LineChart } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,10 +35,7 @@ export default function Navbar() {
     <nav className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-4' : 'bg-white py-6'}`}>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3 group">
-          <div className="bg-[#611F69] p-2.5 rounded-xl group-hover:bg-[#4A154B] transition-colors">
-            <LineChart className="w-6 h-6 text-white" />
-          </div>
-          <span className="font-heading font-extrabold text-2xl text-[#1D1C1D] tracking-tight">Nexus<span className="text-[#611F69]">Data</span></span>
+          <img src="/images/logo.webp" alt="NexusData Logo" className="h-10 w-auto" />
         </a>
 
         {/* Desktop Links */}

@@ -82,11 +82,10 @@ export default function AboutPage() {
 
             {/* Right - Photo Area */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end reveal" style={{ transitionDelay: '0.1s' }}>
-              <div className="w-full max-w-[450px] aspect-square rounded-[35px] bg-gradient-to-br from-[#4A154B] to-[#611F69] flex flex-col items-center justify-center shadow-xl shadow-purple-100 relative overflow-hidden">
-                <span className="text-white text-9xl font-heading font-extrabold opacity-90 drop-shadow-lg">MH</span>
-                
-                <div className="absolute bottom-6 bg-white/95 backdrop-blur-sm px-4 py-2.5 rounded-xl flex items-center gap-2 shadow border border-[#F4F4F4]">
-                  <BadgeCheck className="w-5 h-5 text-green-600" /> 
+              <div className="w-full max-w-[450px] aspect-square rounded-[35px] shadow-xl shadow-purple-100 relative overflow-hidden">
+                <img src="/images/foto-about.webp" alt="Muna Hartanto - Founder NexusData" className="w-full h-full object-cover" loading="lazy" />
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm px-4 py-2.5 rounded-xl flex items-center gap-2 shadow border border-[#F4F4F4]">
+                  <BadgeCheck className="w-5 h-5 text-green-600" />
                   <span className="text-sm font-bold text-green-700">Verified Freelance</span>
                 </div>
               </div>

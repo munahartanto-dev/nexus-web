@@ -34,8 +34,11 @@ export default function Navbar() {
   return (
     <nav className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-4' : 'bg-white py-6'}`}>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3 group">
-          <img src="/images/logo.webp" alt="NexusData Logo" className="h-10 w-auto" />
+        <a href="#" className="flex items-center gap-2 group shrink-0">
+          <img src="/images/logo.webp" alt="NexusData Logo" className="h-11 w-auto" />
+          <span className="font-heading font-extrabold text-[22px] leading-none tracking-tight text-[#1D1C1D]">
+            Nexus<span className="text-[#611F69]">Data</span>
+          </span>
         </a>
 
         {/* Desktop Links */}
@@ -69,7 +72,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu toggle */}
-        <button className="md:hidden p-2 text-[#454245]" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button className="md:hidden min-h-[44px] min-w-[44px] flex items-center justify-center text-[#454245]" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
           {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
       </div>
@@ -84,7 +87,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href === "" ? "#" : link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`font-heading text-lg font-bold transition-colors w-full pb-2 border-b ${
+                className={`font-heading text-lg font-bold transition-colors w-full pb-2 border-b min-h-[44px] flex items-center ${
                   isActive ? "text-[#611F69] border-[#611F69]" : "text-[#1D1C1D] border-gray-100"
                 }`}
               >

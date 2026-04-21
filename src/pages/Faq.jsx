@@ -1,4 +1,3 @@
-"use client";
 import { useState, useEffect } from 'react';
 import { 
   ChevronRight, Search, ChevronDown, MessageCircle, Mail,
@@ -294,7 +293,7 @@ export default function FaqPage() {
                       <button
                         key={idx}
                         onClick={() => scrollToCategory(category.category)}
-                        className={`flex items-center gap-3 w-max lg:w-full px-4 py-3 rounded-xl transition-all font-medium text-sm lg:text-base shrink-0
+                        className={`flex items-center gap-3 w-max lg:w-full px-4 py-3 min-h-[44px] rounded-xl transition-all font-medium text-sm lg:text-base shrink-0
                           ${isCategoryActive 
                             ? 'bg-[#611F69] text-white shadow-md' 
                             : 'bg-transparent text-[#454245] hover:bg-gray-50 hover:text-[#4A154B]'

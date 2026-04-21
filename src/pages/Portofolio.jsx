@@ -376,12 +376,12 @@ export default function PortofolioPage() {
       {/* MODAL POPUP LIHAT DETAIL */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={() => setSelectedProject(null)}>
-          <div 
-            className="bg-white rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-200"
+          <div
+            className="bg-white rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl animate-in fade-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="h-32 flex justify-end p-4 relative" style={{ backgroundColor: selectedProject.color }}>
-              <button onClick={() => setSelectedProject(null)} className="w-8 h-8 bg-black/20 hover:bg-black/40 text-white rounded flex items-center justify-center backdrop-blur-md transition-colors z-10">
+              <button onClick={() => setSelectedProject(null)} className="w-11 h-11 min-h-[44px] min-w-[44px] bg-black/20 hover:bg-black/40 text-white rounded flex items-center justify-center backdrop-blur-md transition-colors z-10">
                 <X className="w-5 h-5" />
               </button>
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

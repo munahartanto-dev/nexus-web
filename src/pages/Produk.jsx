@@ -233,14 +233,14 @@ export default function LayananPage() {
                         <a 
                           href={`${whatsappBaseUrl}?text=Halo%20NexusData,%20saya%20ingin%20info%20detail%20produk%20digital:%20${item.title}`}
                           target="_blank" rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-1.5 bg-slate-50 hover:bg-slate-100 text-[#1D1C1D] text-xs font-bold py-2.5 rounded-lg border border-slate-200 transition-colors"
+                          className="flex items-center justify-center gap-1.5 bg-slate-50 hover:bg-slate-100 text-[#1D1C1D] text-xs font-bold py-3.5 min-h-[44px] rounded-lg border border-slate-200 transition-colors"
                         >
                           <Info className="w-3.5 h-3.5" /> Detail
                         </a>
                         <a 
                           href={`${whatsappBaseUrl}?text=Halo%20NexusData,%20saya%20ingin%20membeli%20produk%20digital:%20${item.title}`}
                           target="_blank" rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-1.5 bg-[#611F69] hover:bg-[#730394] text-white text-xs font-bold py-2.5 rounded-lg transition-colors shadow-sm"
+                          className="flex items-center justify-center gap-1.5 bg-[#611F69] hover:bg-[#730394] text-white text-xs font-bold py-3.5 min-h-[44px] rounded-lg transition-colors shadow-sm"
                         >
                           <ShoppingCart className="w-3.5 h-3.5" /> Beli
                         </a>

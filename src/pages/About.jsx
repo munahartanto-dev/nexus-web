@@ -96,7 +96,7 @@ export default function AboutPage() {
           {/* Bottom - 4 Cards Layout */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal" style={{ transitionDelay: '0.2s' }}>
             {/* Card 1 */}
-            <div className="bg-white rounded-[20px] p-6 flex flex-col justify-between shadow-[0_0_50px_-12px_rgba(59,130,246,0.2)] border border-blue-50/50 hover:-translate-y-1 transition-transform duration-300 aspect-[4/3] max-h-[220px]">
+            <div className="bg-white rounded-[20px] p-6 flex flex-col justify-between shadow-[0_0_50px_-12px_rgba(59,130,246,0.2)] border border-blue-50/50 hover:-translate-y-1 transition-transform duration-300 sm:aspect-[4/3] sm:max-h-[220px]">
                <h3 className="font-heading text-[18px] md:text-[20px] font-bold text-[#1D1C1D] leading-[1.3] mb-4 tracking-tight">Lebih dari 100+<br/>klien dilayani.</h3>
                <div className="flex justify-end mt-auto">
                   <div className="w-12 h-12 rounded-[12px] bg-[#2E0039] flex items-center justify-center -mr-2 -mb-2">
@@ -106,7 +106,7 @@ export default function AboutPage() {
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white rounded-[20px] p-6 flex flex-col justify-between shadow-[0_0_50px_-12px_rgba(34,197,94,0.2)] border border-green-50/50 hover:-translate-y-1 transition-transform duration-300 aspect-[4/3] max-h-[220px]">
+            <div className="bg-white rounded-[20px] p-6 flex flex-col justify-between shadow-[0_0_50px_-12px_rgba(34,197,94,0.2)] border border-green-50/50 hover:-translate-y-1 transition-transform duration-300 sm:aspect-[4/3] sm:max-h-[220px]">
                <h3 className="font-heading text-[18px] md:text-[20px] font-bold text-[#1D1C1D] leading-[1.3] mb-4 tracking-tight">Rating sempurna<br/>rata-rata 4.9.</h3>
                <div className="flex justify-end mt-auto">
                   <div className="w-12 h-12 rounded-[12px] bg-[#2E0039] flex items-center justify-center -mr-2 -mb-2">
@@ -116,7 +116,7 @@ export default function AboutPage() {
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white rounded-[20px] p-6 flex flex-col justify-between shadow-[0_0_50px_-12px_rgba(236,72,153,0.2)] border border-pink-50/50 hover:-translate-y-1 transition-transform duration-300 aspect-[4/3] max-h-[220px]">
+            <div className="bg-white rounded-[20px] p-6 flex flex-col justify-between shadow-[0_0_50px_-12px_rgba(236,72,153,0.2)] border border-pink-50/50 hover:-translate-y-1 transition-transform duration-300 sm:aspect-[4/3] sm:max-h-[220px]">
                <h3 className="font-heading text-[18px] md:text-[20px] font-bold text-[#1D1C1D] leading-[1.3] mb-4 tracking-tight">63+ pekerjaan<br/>diselesaikan.</h3>
                <div className="flex justify-end mt-auto">
                   <div className="w-12 h-12 rounded-[12px] bg-[#2E0039] flex items-center justify-center -mr-2 -mb-2">
@@ -126,7 +126,7 @@ export default function AboutPage() {
             </div>
 
             {/* Card 4 */}
-            <div className="bg-white rounded-[20px] p-6 flex flex-col justify-between shadow-[0_0_50px_-12px_rgba(234,179,8,0.2)] border border-yellow-50/50 hover:-translate-y-1 transition-transform duration-300 aspect-[4/3] max-h-[220px]">
+            <div className="bg-white rounded-[20px] p-6 flex flex-col justify-between shadow-[0_0_50px_-12px_rgba(234,179,8,0.2)] border border-yellow-50/50 hover:-translate-y-1 transition-transform duration-300 sm:aspect-[4/3] sm:max-h-[220px]">
                <h3 className="font-heading text-[18px] md:text-[20px] font-bold text-[#1D1C1D] leading-[1.3] mb-4 tracking-tight">Respons kilat<br/>dalam ~1 menit.</h3>
                <div className="flex justify-end mt-auto">
                   <div className="w-12 h-12 rounded-[12px] bg-[#2E0039] flex items-center justify-center -mr-2 -mb-2">

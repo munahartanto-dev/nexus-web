@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Database, Code, PieChart, FileSpreadsheet, FileCode2, LineChart, BadgeCheck, Star, MessageCircle, ArrowRight, ShoppingCart, Info } from 'lucide-react';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 
 export default function Home() {
   const [activeAnimation, setActiveAnimation] = useState(0);
+  const [autoSlideKey, setAutoSlideKey] = useState(0);
+  const touchStartX = useRef(null);
   const whatsappBaseUrl = "https://wa.me/6285157709694";
 
   const produkDigital = [
@@ -20,6 +22,36 @@ export default function Home() {
     { id: 3, label: 'Notifikasi WA', icon: <MessageCircle className="w-4 h-4" /> },
     { id: 4, label: 'Manajemen Data', icon: <Database className="w-4 h-4" /> }
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveAnimation(prev => (prev + 1) % animationTabs.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [autoSlideKey]);
+
+  const handleTabClick = (id) => {
+    setActiveAnimation(id);
+    setAutoSlideKey(k => k + 1);
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      setActiveAnimation(prev =>
+        diff > 0
+          ? (prev + 1) % animationTabs.length
+          : (prev - 1 + animationTabs.length) % animationTabs.length
+      );
+      setAutoSlideKey(k => k + 1);
+    }
+    touchStartX.current = null;
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,7 +75,7 @@ export default function Home() {
     <div className="w-full">
       
       {/* SECTION 1 - HERO */}
-      <section id="hero" className="relative pt-6 pb-20 md:pt-12 md:pb-28 overflow-hidden bg-[#FAF9F5]">
+      <section id="hero" className="relative pt-6 pb-20 md:pt-12 md:pb-28 overflow-hidden bg-[#FAF9F5] w-full max-w-full">
         {/* Background blob */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#611F69]/20 to-[#4A7CC7]/10 rounded blur-3xl -translate-y-1/2 translate-x-1/3"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#611F69]/10 to-[#F9EDFF]/30 rounded blur-3xl translate-y-1/3 -translate-x-1/3"></div>
@@ -85,7 +117,11 @@ export default function Home() {
           </div>
           
           <div className="w-full relative mt-20 max-w-5xl mx-auto reveal" style={{ transitionDelay: '0.2s' }}>
-            <div className="relative w-full aspect-video md:aspect-[16/9] bg-white rounded-2xl shadow-2xl border border-[#F4F4F4] flex flex-col overflow-hidden z-10 transition-colors duration-500">
+            <div
+              className="relative w-full aspect-video md:aspect-[16/9] bg-white rounded-2xl shadow-2xl border border-[#F4F4F4] flex flex-col overflow-hidden z-10 transition-colors duration-500"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
                {/* Browser/Window Header */}
                <div className="bg-[#FAF9F5] border-b border-[#F4F4F4] px-4 py-3 flex items-center gap-2">
                  <div className="flex gap-2">
@@ -133,20 +169,34 @@ export default function Home() {
             </div>
 
             {/* Switcher Buttons */}
-            <div className="w-full max-w-3xl mx-auto mt-8 flex flex-wrap justify-center gap-3">
+            <div className="w-full max-w-3xl mx-auto mt-8 flex flex-wrap justify-center gap-3 px-4">
               {animationTabs.map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveAnimation(tab.id)}
+                  onClick={() => handleTabClick(tab.id)}
                   className={`flex items-center gap-2 px-5 py-2.5 rounded-full border-2 font-bold text-sm transition-all duration-300 ${
-                    activeAnimation === tab.id 
-                    ? 'border-[#611F69] bg-[#611F69] text-white shadow-md transform scale-105' 
+                    activeAnimation === tab.id
+                    ? 'border-[#611F69] bg-[#611F69] text-white shadow-md transform scale-105'
                     : 'border-[#F4F4F4] bg-white text-[#1D1C1D] hover:border-gray-300'
                   }`}
                 >
                   {tab.icon}
                   {tab.label}
                 </button>
+              ))}
+            </div>
+
+            {/* Dot Indicators */}
+            <div className="flex justify-center gap-2 mt-5">
+              {animationTabs.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => handleTabClick(i)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    activeAnimation === i ? 'bg-[#611F69] w-6' : 'bg-gray-300 w-2'
+                  }`}
+                  aria-label={`Slide ${i + 1}`}
+                />
               ))}
             </div>
           </div>
